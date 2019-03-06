@@ -2,14 +2,15 @@
  * @Author: Thomas Léger 
  * @Date: 2019-03-06 20:05:11 
  * @Last Modified by: Thomas Léger
- * @Last Modified time: 2019-03-07 00:27:16
+ * @Last Modified time: 2019-03-07 00:28:17
  */
 
 "use strict";
 
 const AWS = require("aws-sdk");
 const documentClient = new AWS.DynamoDB.DocumentClient();
-const tableName = "Demo-SomeStage-Table";
+const stage = process.env.STAGE;
+const tableName = `Demo-${stage}-Table`;
 
 module.exports.get = async (event) => {
   const itemId = event.pathParameters.id;

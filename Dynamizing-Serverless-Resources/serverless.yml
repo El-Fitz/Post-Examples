@@ -13,8 +13,16 @@ provider:
       Resource:
         - "Fn::GetAtt": [ DemoTestTable, Arn ]
   environment:
-     REGION: ${self:provider.region}
-     STAGE: ${self:provider.stage}
+    REGION: ${self:provider.region}
+    STAGE: ${self:provider.stage}
+
+custom:
+  dynamoDBDeletePolicies:
+    prod: Retain
+    staging: Retain
+    dev: Delete
+    other: Delete
+  dynamoDBDeletePolicy: ${self:custom.dynamoDBDeletePolicies.${self:provider.stage}, self:custom.dynamoDBDeletePolicies.other}
 
 functions:
   get:
@@ -34,7 +42,7 @@ resources:
   Resources:
     DemoTestTable:
       Type: 'AWS::DynamoDB::Table'
-      DeletionPolicy: 'Delete'
+      DeletionPolicy: ${self:custom.dynamoDBDeletePolicy}
       Properties:
         AttributeDefinitions:
           - AttributeName: hashKey
