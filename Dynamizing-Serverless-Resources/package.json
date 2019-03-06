@@ -1,0 +1,21 @@
+{
+  "name": "dynamizing-serverless-resources",
+  "version": "1.0.0",
+  "description": "The base project for a blog post on dyanmizing serverless resources' properties",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:El-Fitz/Weekly-Fitz-Post-Examples.git"
+  },
+  "keywords": [
+    "serverless"
+  ],
+  "author": "Thomas Léger",
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.415.0"
+  }
+}
