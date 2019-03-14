@@ -1,8 +1,8 @@
 {
-  "name": "setup-cors-apigateway-serverless-demo",
+  "name": "dynamizing-serverless-resources",
   "version": "1.0.0",
-  "description": "The base project for a blog post on setting up CORS on API Gateway using the Serverless Framework",
-  "main": "handler.js",
+  "description": "The base project for a blog post on dyanmizing serverless resources' properties",
+  "main": "api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,5 +14,8 @@
     "serverless"
   ],
   "author": "Thomas Léger",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.415.0"
+  }
 }
