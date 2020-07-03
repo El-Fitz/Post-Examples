@@ -12,7 +12,7 @@ Run `sls deploy --stage YOUR_STAGE`. Stage will default to dev, and region to us
 
 # Clean up
 
-Run `sls remove --stage YOUR_STAGE`. DynamoDB tables with the deletion policy set to `Reaint` will have to be removed manually via aws-cli or the aws console.
+Run `sls remove --stage YOUR_STAGE`. DynamoDB tables with the deletion policy set to `Retain` will have to be removed manually via aws-cli or the aws console.
 
 # Completed project sources
 
